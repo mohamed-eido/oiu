@@ -1,0 +1,66 @@
+.files {
+    position: relative;
+    padding: 8px;
+}
+
+.files .files-list {
+    position: relative;
+}
+
+.blur2.active {
+	filter: blur(20px);
+	pointer-events: none;
+	user-select: none;
+}
+
+.files .files-list .file {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    margin-bottom: 8px;
+    border: 1px solid var(--gray);
+    border-radius: 3px;
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    user-select: none;
+    cursor: pointer;
+}
+
+.files .modal {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: calc(100% - 15px);
+	padding: 15px;
+    padding-top: 65px;
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+	border: 1px solid var(--dark);
+	border-radius: 3px;
+	background-color: #fff;
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.5s;
+	z-index: 999;
+}
+
+.files .modal.active {
+	top: 50%;
+	visibility: visible;
+	opacity: 1;
+	transition: 0.3s;
+	z-index: 999;
+}
+
+.files .modal > i {
+    position: absolute;
+    right: 15px;
+    margin-top: -50px;
+    height: 35px;
+    width: 35px;
+    font-size: 18px;
+    border: 1px solid var(--gray);
+    border-radius: 3px;
+    display: grid;
+    place-items: center;
+}

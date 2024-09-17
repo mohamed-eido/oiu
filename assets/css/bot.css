@@ -1,0 +1,145 @@
+.container .wrapper {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.chat-box {
+	position: relative;
+	width: 100%;
+	height: calc(100% - 60px);
+	background: #f7f7f7;
+}
+
+.chat-box .chat {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	padding: 0 16px;
+	overflow: auto;
+	overflow-x: hidden;
+	pointer-events: unset;
+	user-select: unset;
+	z-index: 1;
+}
+
+.chat-box .chat .wrapper::after {
+	content: ".";
+	color: transparent;
+	user-select: none;
+	pointer-events: none;
+	z-index: 0;
+}
+
+.chat-box .chat .wrapper {
+	height: calc(100% - 10px);
+}
+
+.chat-box .box {
+	margin: 8px 0;
+}
+
+.chat-box .box p {
+	word-wrap: break-word;
+	padding: 8px 16px;
+	box-shadow: 0 0 32px rgb(0 0 0 / 8%),
+		0rem 16px 16px -16px rgb(0 0 0 / 10%);
+}
+
+.chat-box .sent {
+	display: flex;
+}
+
+.chat-box .sent .details {
+	margin-left: auto;
+	max-width: calc(100% - 100px);
+}
+
+.sent .details p {
+	background: var(--dark);
+	color: #fff;
+	border-radius: 5px;
+}
+
+.chat-box .received {
+	display: flex;
+	align-items: flex-start;
+}
+
+.chat-box .received .img {
+	height: 35px;
+	width: 35px;
+	margin-right: 16px;
+	border-radius: 50%;
+	display: grid;
+	place-items: center;
+	font-size: 18px;
+	color: #fff;
+	background: var(--primary-color);
+}
+
+.chat-box .received .details {
+	margin-right: auto;
+	max-width: calc(100% - 130px);
+}
+
+.received .details p {
+	background: #fff;
+	color: var(--dark);
+	border-radius: 5px;
+}
+
+.wrapper .typing-area {
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	bottom: 56px;
+	right: 0;
+	padding: 8px 16px;
+	width: 100%;
+	background: #fff;
+	z-index: 10;
+}
+
+.typing-area input {
+	position: relative;
+	width: calc(100% - 50px);
+	padding-right: 16px;
+	height: 45px;
+	font-size: 18px;
+	font-weight: 500;
+	color: var(--dark);
+	background: transparent;
+	border: none;
+	outline: none;
+}
+
+.typing-area input::placeholder {
+	font-size: 18px;
+	font-weight: normal;
+	color: var(--gray);
+}
+
+.typing-area button {
+	position: relative;
+	display: grid;
+	place-items: center;
+	width: 45px;
+	height: 45px;
+	font-size: 22px;
+	font-weight: 700;
+	color: #8cddcd;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	user-select: none;
+	pointer-events: none;
+	transition: 0.1s;
+}
+
+.typing-area button.active {
+	color: var(--primary-color);
+	pointer-events: unset;
+}
